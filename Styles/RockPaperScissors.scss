@@ -1,6 +1,7 @@
 @import "custom_variables";
 
-//Selectively import Bootstrap 4 components (uncomment what we actually need)
+//Selectively import Bootstrap 4 components
+// (Commented out the stuff I won't be using to keep the compiled CSS size down)
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
@@ -40,5 +41,5 @@
 @import "../node_modules/bootstrap/scss/utilities";
 //@import "../node_modules/bootstrap/scss/print";
 
-//Import our custom styles
+//Import my custom styles
 @import "layout";

@@ -6917,4 +6917,12 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+section.container-fluid, section.container-sm, section.container-md, section.container-lg, section.container-xl {
+  max-width: 1200px;
+}
+
+section.game-element-container .card {
+  margin-bottom: 30px;
+}
+
 /*# sourceMappingURL=RockPaperScissors.css.map */

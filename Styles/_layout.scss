@@ -1,0 +1,9 @@
+section.container-fluid{
+  max-width: 1200px;
+}
+
+section.game-element-container{
+  .card{
+    margin-bottom: $grid-gutter-width;
+  }
+}
