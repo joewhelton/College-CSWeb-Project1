@@ -4,38 +4,76 @@
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="Scripts/game.js"></script>
     <link rel="stylesheet" href="Styles/RockPaperScissors.css">
 
 </head>
 <body>
     <section class="container-fluid">
-        <header class="col-12">
+        <header class="row">
             Rock, Paper, Scissors!
         </header>
         <main class="col-12">
             <section class="row game-element-container">
                 <div class="col-12 col-sm-4">
                     <div class="card bg-light">
-                        <div class="card-body">
-                            Rock
-                        </div>
+                        <figure
+                        class="card-body game-element"
+                        id="rock">
+                            <img src="Assets/rock.svg" alt="Rock" title="Rock">
+                            <figcaption>Rock</figcaption>
+                        </figure>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="card bg-light">
-                        <div class="card-body">
-                            Paper
-                        </div>
+                        <figure
+                        class="card-body game-element"
+                        id="paper">
+                            <img src="Assets/paper.svg" alt="Paper" title="Paper">
+                            <figcaption>Paper</figcaption>
+                        </figure>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
                     <div class="card bg-light">
-                        <div class="card-body">
-                            Scissors
-                        </div>
+                        <figure
+                        class="card-body game-element"
+                        id="scissors">
+                            <img src="Assets/scissors.svg" alt="Scissors" title="Scissors">
+                            <figcaption>Scissors</figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
+            <article class="row info-panels">
+                <section class="col-12 col-sm-6 mb-4 mb-sm-0" id="resultsPanel">
+                    <div class="card bg-light px-3 py-1">
+                        <h1>Results</h1>
+                        <p>
+                            You: <span id="playerChoice"></span>
+                        </p>
+                        <p>
+                            Computer: <span id="computerChoice"></span>
+                        </p>
+                        <p>
+                            Winner: <span id="gameResult"></span>
+                        </p>
+                    </div>
+                </section>
+                <section class="col-12 col-sm-6" id="scorePanel">
+                    <div class="card bg-light px-3 py-1">
+                        <h1>Score</h1>
+                        <p>
+                            You: <span id="playerScore"></span>
+                        </p>
+                        <p>
+                            Computer: <span id="computerScore"></span>
+                        </p>
+
+                    </div>
+                </section>
+            </article>
         </main>
     </section>
 </body>

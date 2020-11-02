@@ -1,9 +1,31 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 section.container-fluid{
   max-width: 1200px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 section.game-element-container{
   .card{
     margin-bottom: $grid-gutter-width;
+    .game-element{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+      img{
+        width: 30%;
+        min-width: 65px;
+      }
+      figcaption{
+        padding-top: 0.3rem;
+        font-size: larger;
+        font-weight: bold;
+      }
+    }
   }
 }
