@@ -12,94 +12,95 @@
 
 </head>
 <body>
-    <section class="container-fluid">
+    <main class="container-fluid">
         <header class="row">
             <h1>Rock, Paper, Scissors!</h1>
             <button class="btn btn-outline-light" onclick="logout()">Log Out</button>
         </header>
-        <main class="col-12">
-            <section class="row game-element-container">
-                <div class="col-12 col-sm-4">
-                    <div class="card bg-light card-rock">
-                        <div class="winning-animation" id="winning-animation-rock"></div>
-                        <figure
-                        class="card-body game-element"
-                        id="rock">
-                            <img src="Assets/rock.svg" alt="Rock" title="Rock">
-                            <figcaption>Rock</figcaption>
-                        </figure>
-                    </div>
+        <section class="row game-element-container">
+            <div class="col-12 col-sm-4">
+                <div class="card bg-light card-rock">
+                    <div class="winning-animation" id="winning-animation-rock"></div>
+                    <figure
+                    class="card-body game-element"
+                    id="rock">
+                        <img src="Assets/rock.svg" alt="Rock" title="Rock">
+                        <figcaption>Rock</figcaption>
+                    </figure>
                 </div>
-                <div class="col-12 col-sm-4">
-                    <div class="card bg-light card-paper">
-                        <div class="winning-animation" id="winning-animation-paper"></div>
-                        <figure
-                        class="card-body game-element"
-                        id="paper">
-                            <img src="Assets/paper.svg" alt="Paper" title="Paper">
-                            <figcaption>Paper</figcaption>
-                        </figure>
-                    </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="card bg-light card-paper">
+                    <div class="winning-animation" id="winning-animation-paper"></div>
+                    <figure
+                    class="card-body game-element"
+                    id="paper">
+                        <img src="Assets/paper.svg" alt="Paper" title="Paper">
+                        <figcaption>Paper</figcaption>
+                    </figure>
                 </div>
-                <div class="col-12 col-sm-4">
-                    <div class="card bg-light card-scissors">
-                        <div class="winning-animation" id="winning-animation-scissors"></div>
-                        <figure
-                        class="card-body game-element"
-                        id="scissors">
-                            <img src="Assets/scissors.svg" alt="Scissors" title="Scissors">
-                            <figcaption>Scissors</figcaption>
-                        </figure>
-                    </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="card bg-light card-scissors">
+                    <div class="winning-animation" id="winning-animation-scissors"></div>
+                    <figure
+                    class="card-body game-element"
+                    id="scissors">
+                        <img src="Assets/scissors.svg" alt="Scissors" title="Scissors">
+                        <figcaption>Scissors</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <article class="row info-panels">
+            <section class="col-12 col-sm-6 mb-4 mb-sm-0" id="resultsPanel">
+                <div class="card bg-light px-3 py-1">
+                    <h2>Round <span id="roundNumber">1</span> - Results</h2>
+                    <p>
+                        You: <span class="player-color" id="playerChoice"></span>
+                    </p>
+                    <p>
+                        Computer: <span class="computer-color" id="computerChoice"></span>
+                    </p>
+                    <p>
+                        Winner: <span id="gameResult"></span>
+                    </p>
                 </div>
             </section>
-            <article class="row info-panels">
-                <section class="col-12 col-sm-6 mb-4 mb-sm-0" id="resultsPanel">
-                    <div class="card bg-light px-3 py-1">
-                        <h2>Round <span id="roundNumber">1</span> - Results</h2>
-                        <p>
-                            You: <span class="player-color" id="playerChoice"></span>
-                        </p>
-                        <p>
-                            Computer: <span class="computer-color" id="computerChoice"></span>
-                        </p>
-                        <p>
-                            Winner: <span id="gameResult"></span>
-                        </p>
-                    </div>
-                </section>
-                <section class="col-12 col-sm-6" id="scorePanel">
-                    <div class="card bg-light px-3 py-1">
-                        <h2>Score</h2>
-                        <p>
-                            You: <span id="playerScore">0</span>
-                        </p>
-                        <p>
-                            Computer: <span id="computerScore">0</span>
-                        </p>
-                    </div>
-                </section>
-            </article>
-        </main>
-    </section>
+            <section class="col-12 col-sm-6" id="scorePanel">
+                <div class="card bg-light px-3 py-1">
+                    <h2>Score</h2>
+                    <p>
+                        You: <span class="player-color" id="playerScore">0</span>
+                    </p>
+                    <p>
+                        Computer: <span class="computer-color" id="computerScore">0</span>
+                    </p>
+                    <p>
+                        Rounds to win:  <span class="draw-color" id="roundsToWin"></span>
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
     <!-- Modal -->
     <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <main class="modal-content">
+            <section class="modal-content">
                 <header class="modal-header">
-                    <span id="modalTitle"></span>
+                    <h2 id="modalTitle"></h2>
                     <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </header>
-                <main class="modal-body">
+                <article class="modal-body">
                     <img class="winner-image" id="winnerComputerImage" src="Assets/computer-win.svg" alt="Computer Wins!">
                     <img class="winner-image" id="winnerPlayerImage" src="Assets/player-win.svg" alt="Player Wins!">
-                </main>
+                </article>
                 <footer class="modal-footer">
                     <button type="button" onclick="gameInstance.newGame()" class="btn btn-primary" data-dismiss="modal">Play Again</button>
                 </footer>
-            </main>
+            </section>
         </div>
     </div>
 </body>

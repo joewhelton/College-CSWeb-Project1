@@ -6923,7 +6923,7 @@ html, body {
   overflow: hidden;
 }
 
-section.container-fluid, section.container-sm, section.container-md, section.container-lg, section.container-xl {
+main.container-fluid, main.container-sm, main.container-md, main.container-lg, main.container-xl {
   max-width: 1200px;
   height: 100%;
   overflow-y: auto;
@@ -6996,52 +6996,52 @@ body header {
   box-shadow: 0 5px 5px #adb5bd;
   justify-content: space-between;
 }
-body section.container-fluid, body section.container-sm, body section.container-md, body section.container-lg, body section.container-xl {
+body main.container-fluid, body main.container-sm, body main.container-md, body main.container-lg, body main.container-xl {
   background: #fff;
   border: 0 solid rgba(0, 0, 0, 0.125);
   border-left: 1px;
   border-right: 1px;
 }
-body section.container-fluid .game-element, body section.container-sm .game-element, body section.container-md .game-element, body section.container-lg .game-element, body section.container-xl .game-element {
+body main.container-fluid .game-element, body main.container-sm .game-element, body main.container-md .game-element, body main.container-lg .game-element, body main.container-xl .game-element {
   cursor: pointer;
 }
-body section.container-fluid div.card, body section.container-sm div.card, body section.container-md div.card, body section.container-lg div.card, body section.container-xl div.card {
+body main.container-fluid div.card, body main.container-sm div.card, body main.container-md div.card, body main.container-lg div.card, body main.container-xl div.card {
   transition: all 0.15s ease-in-out;
 }
-body section.container-fluid div.card.player-selected, body section.container-sm div.card.player-selected, body section.container-md div.card.player-selected, body section.container-lg div.card.player-selected, body section.container-xl div.card.player-selected {
-  border-color: #7395ae;
-  background-color: #e4ebef !important;
-  box-shadow: 0 0 3px 3px #e4ebef;
+body main.container-fluid div.card.player-selected, body main.container-sm div.card.player-selected, body main.container-md div.card.player-selected, body main.container-lg div.card.player-selected, body main.container-xl div.card.player-selected {
+  border-color: #4a7fa7;
+  background-color: #e4ecf3 !important;
+  box-shadow: 0 0 3px 3px #c0d4e3;
 }
-body section.container-fluid div.card.computer-selected, body section.container-sm div.card.computer-selected, body section.container-md div.card.computer-selected, body section.container-lg div.card.computer-selected, body section.container-xl div.card.computer-selected {
-  border-color: #e15c70;
-  background-color: #fdf3f4 !important;
-  box-shadow: 0 0 3px 3px #e4ebef;
+body main.container-fluid div.card.computer-selected, body main.container-sm div.card.computer-selected, body main.container-md div.card.computer-selected, body main.container-lg div.card.computer-selected, body main.container-xl div.card.computer-selected {
+  border-color: #bd4d5e;
+  background-color: #fbf4f5 !important;
+  box-shadow: 0 0 3px 3px #edcfd4;
 }
-body section.container-fluid div.card.player-selected.computer-selected, body section.container-sm div.card.player-selected.computer-selected, body section.container-md div.card.player-selected.computer-selected, body section.container-lg div.card.player-selected.computer-selected, body section.container-xl div.card.player-selected.computer-selected {
+body main.container-fluid div.card.player-selected.computer-selected, body main.container-sm div.card.player-selected.computer-selected, body main.container-md div.card.player-selected.computer-selected, body main.container-lg div.card.player-selected.computer-selected, body main.container-xl div.card.player-selected.computer-selected {
   border-color: #83677b;
   background-color: #d4c8d1 !important;
-  box-shadow: 0 0 3px 3px #e4ebef;
+  box-shadow: 0 0 3px 3px #d4c8d1;
 }
-body section.container-fluid h1, body section.container-sm h1, body section.container-md h1, body section.container-lg h1, body section.container-xl h1 {
+body main.container-fluid h1, body main.container-sm h1, body main.container-md h1, body main.container-lg h1, body main.container-xl h1 {
   font-size: x-large;
 }
-body section.container-fluid h2, body section.container-sm h2, body section.container-md h2, body section.container-lg h2, body section.container-xl h2 {
+body main.container-fluid h2, body main.container-sm h2, body main.container-md h2, body main.container-lg h2, body main.container-xl h2 {
   font-size: 1.5rem !important;
 }
-body section.container-fluid article.info-panels .player-color, body section.container-sm article.info-panels .player-color, body section.container-md article.info-panels .player-color, body section.container-lg article.info-panels .player-color, body section.container-xl article.info-panels .player-color {
-  color: #7395ae;
+body main.container-fluid article.info-panels .player-color, body main.container-sm article.info-panels .player-color, body main.container-md article.info-panels .player-color, body main.container-lg article.info-panels .player-color, body main.container-xl article.info-panels .player-color {
+  color: #4a7fa7;
 }
-body section.container-fluid article.info-panels .computer-color, body section.container-sm article.info-panels .computer-color, body section.container-md article.info-panels .computer-color, body section.container-lg article.info-panels .computer-color, body section.container-xl article.info-panels .computer-color {
-  color: #e15c70;
+body main.container-fluid article.info-panels .computer-color, body main.container-sm article.info-panels .computer-color, body main.container-md article.info-panels .computer-color, body main.container-lg article.info-panels .computer-color, body main.container-xl article.info-panels .computer-color {
+  color: #bd4d5e;
 }
-body section.container-fluid article.info-panels .draw-color, body section.container-sm article.info-panels .draw-color, body section.container-md article.info-panels .draw-color, body section.container-lg article.info-panels .draw-color, body section.container-xl article.info-panels .draw-color {
+body main.container-fluid article.info-panels .draw-color, body main.container-sm article.info-panels .draw-color, body main.container-md article.info-panels .draw-color, body main.container-lg article.info-panels .draw-color, body main.container-xl article.info-panels .draw-color {
   color: #83677b;
 }
-body section.container-fluid article.info-panels p, body section.container-sm article.info-panels p, body section.container-md article.info-panels p, body section.container-lg article.info-panels p, body section.container-xl article.info-panels p {
+body main.container-fluid article.info-panels p, body main.container-sm article.info-panels p, body main.container-md article.info-panels p, body main.container-lg article.info-panels p, body main.container-xl article.info-panels p {
   font-weight: bold;
 }
-body section.container-fluid article.info-panels p span, body section.container-sm article.info-panels p span, body section.container-md article.info-panels p span, body section.container-lg article.info-panels p span, body section.container-xl article.info-panels p span {
+body main.container-fluid article.info-panels p span, body main.container-sm article.info-panels p span, body main.container-md article.info-panels p span, body main.container-lg article.info-panels p span, body main.container-xl article.info-panels p span {
   font-weight: normal;
 }
 

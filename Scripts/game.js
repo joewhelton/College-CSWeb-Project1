@@ -12,7 +12,7 @@ function Game (username){
     };
 
     let roundInProgress = null; //Flag to stop user clicking again while computer is "thinking" etc
-    let gamesToWin = 3;
+    let gamesToWin = 10;
     let gameOver = false;
     let round = 1;
 
@@ -84,9 +84,9 @@ function Game (username){
 
     const calculateResult = () => {
         let result = compareChoices(player.currentChoice, computer.currentChoice);
-        if (result === 0){
-            $('#gameResult').removeClass().addClass('combined-color').text('Draw!');
-        } else if (result === 1){
+        if (result === 0){      //Draw
+            $('#gameResult').removeClass().addClass('draw-color').text('Draw!');
+        } else if (result === 1){       //Player Wins
             setTimeout(()=>{
                 $('#gameResult').removeClass().addClass('player-color').text(`${player.username}!`);
                 $(`#winning-animation-${computer.currentChoice}`)
@@ -95,7 +95,7 @@ function Game (username){
                         incrementPlayerScore();
                     });
             }, 1000)
-        } else {
+        } else {        //Computer Wins
             setTimeout(()=> {
                 $('#gameResult').removeClass().addClass('computer-color').text(`${computer.username}!`);
                 $(`#winning-animation-${player.currentChoice}`)
@@ -145,8 +145,9 @@ function Game (username){
         resetGameElements();
     }
 
-    //attach event listeners
-    this.attachEventListeners = () => {
+    //attach event listeners and set some default text
+    this.initialise = () => {
+        $('#roundsToWin').text(gamesToWin);
         $('.game-element').click(handleUserChoice);
     }
 }
@@ -164,6 +165,6 @@ $(document).ready(()=>{
         window.location.href = './index.html';
     } else {
         gameInstance= new Game(username);
-        gameInstance.attachEventListeners();
+        gameInstance.initialise();
     }
 })

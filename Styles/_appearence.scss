@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
   }
 
-  section.container-fluid {
+  main.container-fluid {
     background: $white;
     border: 0 solid $card-border-color;
     border-left: $card-border-width;
@@ -26,20 +26,20 @@ body {
 
       &.player-selected {
         border-color: $player-color;
-        background-color: lighten($player-color, 35%) !important;
+        background-color: lighten($player-color, 45%) !important;
         box-shadow: 0 0 3px 3px lighten($player-color, 35%);
       }
 
       &.computer-selected {
         border-color: $computer-color;
-        background-color: lighten($computer-color, 35%) !important;
-        box-shadow: 0 0 3px 3px lighten($player-color, 35%);
+        background-color: lighten($computer-color, 45%) !important;
+        box-shadow: 0 0 3px 3px lighten($computer-color, 35%);
       }
 
       &.player-selected.computer-selected {
         border-color: $combined-color;
         background-color: lighten($combined-color, 35%) !important;
-        box-shadow: 0 0 3px 3px lighten($player-color, 35%);
+        box-shadow: 0 0 3px 3px lighten($combined-color, 35%);
       }
     }
     h1{
