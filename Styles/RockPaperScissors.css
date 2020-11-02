@@ -6918,6 +6918,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 html, body {
+  min-width: 280px;
   height: 100%;
   overflow: hidden;
 }
@@ -6945,6 +6946,12 @@ section.game-element-container .card div.winning-animation > img {
   width: 50%;
   min-width: 90px;
 }
+@media only screen and (max-width: 576px) {
+  section.game-element-container .card div.winning-animation > img {
+    width: 40%;
+    min-width: 60px;
+  }
+}
 section.game-element-container .card .game-element {
   display: flex;
   flex-direction: column;
@@ -6956,6 +6963,12 @@ section.game-element-container .card .game-element {
 section.game-element-container .card .game-element > img {
   width: 30%;
   min-width: 65px;
+}
+@media only screen and (max-width: 576px) {
+  section.game-element-container .card .game-element > img {
+    width: 20%;
+    min-width: 45px;
+  }
 }
 section.game-element-container .card .game-element figcaption {
   padding-top: 0.3rem;
@@ -6978,11 +6991,10 @@ body {
 body header {
   background-color: #007bff;
   padding: 1rem;
-  font-size: x-large;
-  font-weight: bold;
   color: #fff;
   margin-bottom: 30px;
   box-shadow: 0 5px 5px #adb5bd;
+  justify-content: space-between;
 }
 body section.container-fluid, body section.container-sm, body section.container-md, body section.container-lg, body section.container-xl {
   background: #fff;
@@ -7012,7 +7024,19 @@ body section.container-fluid div.card.player-selected.computer-selected, body se
   box-shadow: 0 0 3px 3px #e4ebef;
 }
 body section.container-fluid h1, body section.container-sm h1, body section.container-md h1, body section.container-lg h1, body section.container-xl h1 {
+  font-size: x-large;
+}
+body section.container-fluid h2, body section.container-sm h2, body section.container-md h2, body section.container-lg h2, body section.container-xl h2 {
   font-size: 1.5rem !important;
+}
+body section.container-fluid article.info-panels .player-color, body section.container-sm article.info-panels .player-color, body section.container-md article.info-panels .player-color, body section.container-lg article.info-panels .player-color, body section.container-xl article.info-panels .player-color {
+  color: #7395ae;
+}
+body section.container-fluid article.info-panels .computer-color, body section.container-sm article.info-panels .computer-color, body section.container-md article.info-panels .computer-color, body section.container-lg article.info-panels .computer-color, body section.container-xl article.info-panels .computer-color {
+  color: #e15c70;
+}
+body section.container-fluid article.info-panels .draw-color, body section.container-sm article.info-panels .draw-color, body section.container-md article.info-panels .draw-color, body section.container-lg article.info-panels .draw-color, body section.container-xl article.info-panels .draw-color {
+  color: #83677b;
 }
 body section.container-fluid article.info-panels p, body section.container-sm article.info-panels p, body section.container-md article.info-panels p, body section.container-lg article.info-panels p, body section.container-xl article.info-panels p {
   font-weight: bold;

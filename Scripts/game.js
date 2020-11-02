@@ -1,9 +1,9 @@
-function Game (){
+function Game (username){
     //Variables
     let player = {
         currentChoice: null,
         currentScore: 0,
-        username: 'User'    //TODO set player name properly
+        username: username || 'User'
     };
     let computer = {
         currentChoice: null,
@@ -11,7 +11,7 @@ function Game (){
         username: 'Computer'
     };
 
-    let roundInProgress = null;
+    let roundInProgress = null; //Flag to stop user clicking again while computer is "thinking" etc
     let gamesToWin = 3;
     let gameOver = false;
     let round = 1;
@@ -85,10 +85,10 @@ function Game (){
     const calculateResult = () => {
         let result = compareChoices(player.currentChoice, computer.currentChoice);
         if (result === 0){
-            $('#gameResult').text('Draw!');
+            $('#gameResult').removeClass().addClass('combined-color').text('Draw!');
         } else if (result === 1){
             setTimeout(()=>{
-                $('#gameResult').text(`${player.username}!`);
+                $('#gameResult').removeClass().addClass('player-color').text(`${player.username}!`);
                 $(`#winning-animation-${computer.currentChoice}`)
                     .html(`<img src='Assets/${player.currentChoice}.svg' alt='Winning animation image'>`)
                     .fadeIn(1000, () => {
@@ -97,7 +97,7 @@ function Game (){
             }, 1000)
         } else {
             setTimeout(()=> {
-                $('#gameResult').text(`${computer.username}!`);
+                $('#gameResult').removeClass().addClass('computer-color').text(`${computer.username}!`);
                 $(`#winning-animation-${player.currentChoice}`)
                     .html(`<img src='Assets/${computer.currentChoice}.svg' alt='Winning animation image'>`)
                     .fadeIn(1000, ()=>{
@@ -151,8 +151,19 @@ function Game (){
     }
 }
 
-let gameInstance = new Game();
+const logout = () => {
+    localStorage.setItem('username', '');
+    window.location.href = './index.html';
+}
+
+let gameInstance;
 
 $(document).ready(()=>{
-    gameInstance.attachEventListeners();
+    const username = localStorage.getItem('username');
+    if(!username){
+        window.location.href = './index.html';
+    } else {
+        gameInstance= new Game(username);
+        gameInstance.attachEventListeners();
+    }
 })
