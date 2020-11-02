@@ -11,30 +11,43 @@ function Game (){
         username: 'Computer'
     };
 
-    let gameInProgress = null;
+    let roundInProgress = null;
+    let gamesToWin = 3;
+    let gameOver = false;
+    let round = 1;
 
     const setPlayerChoice = (choice) => {
         player.currentChoice = (choice || null);
+        $(`div.card-${choice}`).addClass('player-selected');
         $('#playerChoice').text(choice);
+    }
+
+    const setComputerChoice = (choice) => {
+        $('div.card.computer-selected').removeClass('computer-selected');
+        computer.currentChoice = (choice || null);
+        $(`div.card-${choice}`).addClass('computer-selected');
+        $('#computerChoice').text(choice);
     }
 
     const incrementPlayerScore = () => {
         $('#playerScore').text(++player.currentScore);
+        if(player.currentScore === gamesToWin){
+
+        }
     }
 
     const incrementComputerScore = () => {
         $('#computerScore').text(++computer.currentScore);
-    }
+        if(computer.currentScore === gamesToWin){
 
-    const setComputerChoice = (choice) => {
-        computer.currentChoice = (choice || null);
-        $('#computerChoice').text(choice);
+        }
     }
 
     //event listeners
     const handleUserChoice = (e) =>{
-        if(!gameInProgress) {
-            gameInProgress = true;
+        $('.game-element').css('cursor', 'not-allowed').prop('title', 'Round already in progress');
+        if(!roundInProgress) {
+            roundInProgress = true;
             //console.log(e.currentTarget.id);
             setPlayerChoice(e.currentTarget.id);
             makeComputerChoice();
@@ -42,13 +55,23 @@ function Game (){
     }
 
     const makeComputerChoice = () => {
+        $('#computerChoice').text("Thinking...");
         const choices = ['rock', 'paper', 'scissors'];
-        setComputerChoice(
-            choices[
-                Math.floor(Math.random() * choices.length)
-            ]
-        );
-        calculateResult();
+        let choiceIndex = 0;
+        let thinkingInterval = setInterval(() => {
+            $('div.card.computer-selected').removeClass('computer-selected');
+            $(`div.card-${choices[choiceIndex++ % choices.length]}`).addClass('computer-selected');
+        }, 200);
+
+        setTimeout(()=> {
+            clearInterval(thinkingInterval)
+            setComputerChoice(
+                choices[
+                    Math.floor(Math.random() * choices.length)
+                    ]
+            );
+            calculateResult();
+        }, 2000)
     }
 
     const calculateResult = () => {
@@ -56,13 +79,27 @@ function Game (){
         if (result === 0){
             $('#gameResult').text('Draw!');
         } else if (result === 1){
-            $('#gameResult').text(`${player.username}!`);
-            incrementPlayerScore();
+            setTimeout(()=>{
+                $('#gameResult').text(`${player.username}!`);
+                $(`#winning-animation-${computer.currentChoice}`)
+                    .html(`<img src='Assets/${player.currentChoice}.svg' alt='Winning animation image'>`)
+                    .fadeIn(1000);
+                incrementPlayerScore();
+            }, 1000)
         } else {
-            $('#gameResult').text(`${computer.username}!`);
-            incrementComputerScore();
+            setTimeout(()=> {
+                $('#gameResult').text(`${computer.username}!`);
+                $(`#winning-animation-${player.currentChoice}`)
+                    .html(`<img src='Assets/${computer.currentChoice}.svg' alt='Winning animation image'>`)
+                    .fadeIn(1000);
+                incrementComputerScore();
+            }, 1000);
         }
-        gameInProgress = false;
+        setTimeout(()=>{
+            if(!gameOver) {
+                resetGameElements();
+            }
+        }, 3000);
     }
 
     const compareChoices = (player1, player2) => {
@@ -78,6 +115,20 @@ function Game (){
             case 'scissors' :
                 return (player2 === 'paper' ? 1 : -1);
         }
+    }
+
+    const resetGameElements = () => {
+        $('div.card').removeClass('computer-selected player-selected');
+        $('.winning-animation').html('').hide();
+        $('#playerChoice, #computerChoice, #gameResult').text('');
+        roundInProgress = false;
+        $('.game-element').css('cursor', 'pointer');
+    }
+
+    const newGame = () => {
+        player.currentScore = 0;
+        computer.currentScore = 0;
+        round = 0;
     }
 
     //attach event listeners

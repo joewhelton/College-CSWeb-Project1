@@ -1,34 +1,60 @@
-body{
+body {
   background-image: url('../Assets/squiggles.png');
   background-color: $gray-100;
-}
 
-section.container-fluid{
-  background: $white;
-  border: 0 solid $card-border-color;
-  border-left: $card-border-width;
-  border-right: $card-border-width;
-}
-
-header{
-  background-color: theme-color("primary");
-  padding: 1rem;
-  font-size: x-large;
-  font-weight: bold;
-  color: $white;
-  margin-bottom: $grid-gutter-width;
-  box-shadow: 0 5px 5px $gray-500;
-}
-
-h1{
-  font-size: 1.5rem !important;
-}
-
-article.info-panels{
-  p{
+  header {
+    background-color: theme-color("primary");
+    padding: 1rem;
+    font-size: x-large;
     font-weight: bold;
-    span{
-      font-weight: normal;
+    color: $white;
+    margin-bottom: $grid-gutter-width;
+    box-shadow: 0 5px 5px $gray-500;
+  }
+
+  section.container-fluid {
+    background: $white;
+    border: 0 solid $card-border-color;
+    border-left: $card-border-width;
+    border-right: $card-border-width;
+
+    .game-element{
+      cursor: pointer;
+    }
+
+    div.card {
+      transition: all .15s ease-in-out;
+
+      &.player-selected {
+        border-color: $player-color;
+        background-color: lighten($player-color, 35%) !important;
+        box-shadow: 0 0 3px 3px lighten($player-color, 35%);
+      }
+
+      &.computer-selected {
+        border-color: $computer-color;
+        background-color: lighten($computer-color, 35%) !important;
+        box-shadow: 0 0 3px 3px lighten($player-color, 35%);
+      }
+
+      &.player-selected.computer-selected {
+        border-color: $combined-color;
+        background-color: lighten($combined-color, 35%) !important;
+        box-shadow: 0 0 3px 3px lighten($player-color, 35%);
+      }
+    }
+    h1 {
+      font-size: 1.5rem !important;
+    }
+
+    article.info-panels {
+      p {
+        font-weight: bold;
+
+        span {
+          font-weight: normal;
+        }
+      }
     }
   }
 }

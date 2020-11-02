@@ -6931,13 +6931,29 @@ section.container-fluid, section.container-sm, section.container-md, section.con
 section.game-element-container .card {
   margin-bottom: 30px;
 }
+section.game-element-container .card div.winning-animation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: 10;
+}
+section.game-element-container .card div.winning-animation > img {
+  margin-left: 25%;
+  width: 50%;
+  min-width: 90px;
+}
 section.game-element-container .card .game-element {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
 }
-section.game-element-container .card .game-element img {
+section.game-element-container .card .game-element > img {
   width: 30%;
   min-width: 65px;
 }
@@ -6951,15 +6967,7 @@ body {
   background-image: url("../Assets/squiggles.png");
   background-color: #f8f9fa;
 }
-
-section.container-fluid, section.container-sm, section.container-md, section.container-lg, section.container-xl {
-  background: #fff;
-  border: 0 solid rgba(0, 0, 0, 0.125);
-  border-left: 1px;
-  border-right: 1px;
-}
-
-header {
+body header {
   background-color: #007bff;
   padding: 1rem;
   font-size: x-large;
@@ -6968,15 +6976,40 @@ header {
   margin-bottom: 30px;
   box-shadow: 0 5px 5px #adb5bd;
 }
-
-h1 {
+body section.container-fluid, body section.container-sm, body section.container-md, body section.container-lg, body section.container-xl {
+  background: #fff;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-left: 1px;
+  border-right: 1px;
+}
+body section.container-fluid .game-element, body section.container-sm .game-element, body section.container-md .game-element, body section.container-lg .game-element, body section.container-xl .game-element {
+  cursor: pointer;
+}
+body section.container-fluid div.card, body section.container-sm div.card, body section.container-md div.card, body section.container-lg div.card, body section.container-xl div.card {
+  transition: all 0.15s ease-in-out;
+}
+body section.container-fluid div.card.player-selected, body section.container-sm div.card.player-selected, body section.container-md div.card.player-selected, body section.container-lg div.card.player-selected, body section.container-xl div.card.player-selected {
+  border-color: #7395ae;
+  background-color: #e4ebef !important;
+  box-shadow: 0 0 3px 3px #e4ebef;
+}
+body section.container-fluid div.card.computer-selected, body section.container-sm div.card.computer-selected, body section.container-md div.card.computer-selected, body section.container-lg div.card.computer-selected, body section.container-xl div.card.computer-selected {
+  border-color: #e15c70;
+  background-color: #fdf3f4 !important;
+  box-shadow: 0 0 3px 3px #e4ebef;
+}
+body section.container-fluid div.card.player-selected.computer-selected, body section.container-sm div.card.player-selected.computer-selected, body section.container-md div.card.player-selected.computer-selected, body section.container-lg div.card.player-selected.computer-selected, body section.container-xl div.card.player-selected.computer-selected {
+  border-color: #83677b;
+  background-color: #d4c8d1 !important;
+  box-shadow: 0 0 3px 3px #e4ebef;
+}
+body section.container-fluid h1, body section.container-sm h1, body section.container-md h1, body section.container-lg h1, body section.container-xl h1 {
   font-size: 1.5rem !important;
 }
-
-article.info-panels p {
+body section.container-fluid article.info-panels p, body section.container-sm article.info-panels p, body section.container-md article.info-panels p, body section.container-lg article.info-panels p, body section.container-xl article.info-panels p {
   font-weight: bold;
 }
-article.info-panels p span {
+body section.container-fluid article.info-panels p span, body section.container-sm article.info-panels p span, body section.container-md article.info-panels p span, body section.container-lg article.info-panels p span, body section.container-xl article.info-panels p span {
   font-weight: normal;
 }
 

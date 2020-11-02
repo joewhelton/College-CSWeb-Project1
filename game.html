@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="Scripts/game.js"></script>
     <link rel="stylesheet" href="Styles/RockPaperScissors.css">
 
@@ -16,7 +16,8 @@
         <main class="col-12">
             <section class="row game-element-container">
                 <div class="col-12 col-sm-4">
-                    <div class="card bg-light">
+                    <div class="card bg-light card-rock">
+                        <div class="winning-animation" id="winning-animation-rock"></div>
                         <figure
                         class="card-body game-element"
                         id="rock">
@@ -26,7 +27,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
-                    <div class="card bg-light">
+                    <div class="card bg-light card-paper">
+                        <div class="winning-animation" id="winning-animation-paper"></div>
                         <figure
                         class="card-body game-element"
                         id="paper">
@@ -36,7 +38,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-4">
-                    <div class="card bg-light">
+                    <div class="card bg-light card-scissors">
+                        <div class="winning-animation" id="winning-animation-scissors"></div>
                         <figure
                         class="card-body game-element"
                         id="scissors">
@@ -70,11 +73,28 @@
                         <p>
                             Computer: <span id="computerScore">0</span>
                         </p>
-
                     </div>
                 </section>
             </article>
         </main>
     </section>
+    <!-- Modal -->
+    <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+<!--                <div class="modal-header">-->
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                        <span aria-hidden="true">&times;</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+                <section class="modal-body">
+                    <
+                </section>
+                <footer class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Play Again</button>
+                </footer>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

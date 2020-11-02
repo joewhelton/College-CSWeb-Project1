@@ -12,12 +12,29 @@ section.container-fluid{
 section.game-element-container{
   .card{
     margin-bottom: $grid-gutter-width;
+    div.winning-animation{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top:0;
+      bottom: 0;
+      display: none;
+      z-index: 10;
+      > img{
+        margin-left: 25%;
+        width: 50%;
+        min-width: 90px;
+      }
+    }
+
     .game-element{
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 0;
-      img{
+      position: relative;
+      overflow: hidden;
+      > img{
         width: 30%;
         min-width: 65px;
       }
