@@ -142,6 +142,7 @@ function Game (username){
         computer.currentScore = 0;
         round = 0;
         $('#scorePanel span').text('0');
+        $('#roundsToWin').text(gamesToWin);
         resetGameElements();
     }
 
