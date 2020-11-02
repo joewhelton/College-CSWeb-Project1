@@ -46,3 +46,13 @@ section.game-element-container{
     }
   }
 }
+
+#winningModal{
+  .modal-body{
+    display: flex;
+    justify-content: center;
+    img{
+      width: 80%;
+    }
+  }
+}

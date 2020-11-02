@@ -6963,6 +6963,14 @@ section.game-element-container .card .game-element figcaption {
   font-weight: bold;
 }
 
+#winningModal .modal-body {
+  display: flex;
+  justify-content: center;
+}
+#winningModal .modal-body img {
+  width: 80%;
+}
+
 body {
   background-image: url("../Assets/squiggles.png");
   background-color: #f8f9fa;

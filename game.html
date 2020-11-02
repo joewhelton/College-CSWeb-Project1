@@ -6,6 +6,10 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="Scripts/game.js"></script>
     <link rel="stylesheet" href="Styles/RockPaperScissors.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<!--    <script src="node_modules/@popperjs/core/dist/cjs/popper.js"></script>-->
+<!--    <script src="node_modules/bootstrap/js/dist/modal.js"></script>-->
+
 
 </head>
 <body>
@@ -52,7 +56,7 @@
             <article class="row info-panels">
                 <section class="col-12 col-sm-6 mb-4 mb-sm-0" id="resultsPanel">
                     <div class="card bg-light px-3 py-1">
-                        <h1>Results</h1>
+                        <h1>Round <span id="roundNumber">1</span> - Results</h1>
                         <p>
                             You: <span id="playerChoice"></span>
                         </p>
@@ -81,19 +85,21 @@
     <!-- Modal -->
     <div class="modal fade" id="winningModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-<!--                <div class="modal-header">-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                        <span aria-hidden="true">&times;</span>-->
-<!--                    </button>-->
-<!--                </div>-->
-                <section class="modal-body">
-                    <
-                </section>
+            <main class="modal-content">
+                <header class="modal-header">
+                    <span id="modalTitle"></span>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </header>
+                <main class="modal-body">
+                    <img class="winner-image" id="winnerComputerImage" src="Assets/computer-win.svg" alt="Computer Wins!">
+                    <img class="winner-image" id="winnerPlayerImage" src="Assets/player-win.svg" alt="Player Wins!">
+                </main>
                 <footer class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Play Again</button>
+                    <button type="button" onclick="gameInstance.newGame()" class="btn btn-primary" data-dismiss="modal">Play Again</button>
                 </footer>
-            </div>
+            </main>
         </div>
     </div>
 </body>

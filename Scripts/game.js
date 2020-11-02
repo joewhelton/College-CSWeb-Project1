@@ -32,14 +32,22 @@ function Game (){
     const incrementPlayerScore = () => {
         $('#playerScore').text(++player.currentScore);
         if(player.currentScore === gamesToWin){
-
+            gameOver = true;
+            $('#modalTitle').text(`${player.username} Wins!`);
+            $('.winner-image').hide();
+            $('#winnerPlayerImage').show();
+            $('#winningModal').modal('show');
         }
     }
 
     const incrementComputerScore = () => {
         $('#computerScore').text(++computer.currentScore);
         if(computer.currentScore === gamesToWin){
-
+            gameOver = true;
+            $('#modalTitle').text(`${computer.username} Wins!`);
+            $('.winner-image').hide();
+            $('#winnerComputerImage').show();
+            $('#winningModal').modal('show');
         }
     }
 
@@ -83,16 +91,18 @@ function Game (){
                 $('#gameResult').text(`${player.username}!`);
                 $(`#winning-animation-${computer.currentChoice}`)
                     .html(`<img src='Assets/${player.currentChoice}.svg' alt='Winning animation image'>`)
-                    .fadeIn(1000);
-                incrementPlayerScore();
+                    .fadeIn(1000, () => {
+                        incrementPlayerScore();
+                    });
             }, 1000)
         } else {
             setTimeout(()=> {
                 $('#gameResult').text(`${computer.username}!`);
                 $(`#winning-animation-${player.currentChoice}`)
                     .html(`<img src='Assets/${computer.currentChoice}.svg' alt='Winning animation image'>`)
-                    .fadeIn(1000);
-                incrementComputerScore();
+                    .fadeIn(1000, ()=>{
+                        incrementComputerScore();
+                    });
             }, 1000);
         }
         setTimeout(()=>{
@@ -118,6 +128,7 @@ function Game (){
     }
 
     const resetGameElements = () => {
+        $('#roundNumber').text(++round);
         $('div.card').removeClass('computer-selected player-selected');
         $('.winning-animation').html('').hide();
         $('#playerChoice, #computerChoice, #gameResult').text('');
@@ -125,17 +136,19 @@ function Game (){
         $('.game-element').css('cursor', 'pointer');
     }
 
-    const newGame = () => {
+    this.newGame = () => {
+        gameOver = false;
         player.currentScore = 0;
         computer.currentScore = 0;
         round = 0;
+        $('#scorePanel span').text('0');
+        resetGameElements();
     }
 
     //attach event listeners
     this.attachEventListeners = () => {
         $('.game-element').click(handleUserChoice);
     }
-
 }
 
 let gameInstance = new Game();
